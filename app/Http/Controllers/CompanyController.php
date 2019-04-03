@@ -33,7 +33,7 @@ class CompanyController extends Controller
     public function create()
     {
         $model      = new Company();
-        $devices    = collect();
+        $devices    = Device::all('sn', 'name')->makeHidden(['storage_capacity']);
 
         return view('company.form', compact('model', 'devices'));
     }
