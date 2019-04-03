@@ -1,0 +1,15 @@
+.action-buttons {
+  .material-icons {
+    font-size: 12px;
+  }
+
+  .btn {
+    padding: 0.1rem 0.4rem;
+    &:hover {
+      box-shadow: $btn-box-shadow;
+    }
+    &:not(:nth-last-child) {
+      margin-right: 5px;
+    }
+  }
+}

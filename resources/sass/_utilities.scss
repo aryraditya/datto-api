@@ -1,0 +1,70 @@
+.box-shadow {
+  box-shadow: $box-shadow;
+}
+
+.box-shadow-sm {
+  box-shadow: $box-shadow-sm;
+}
+
+.has-icon {
+  display: inline-flex;
+  align-items: center;
+
+  i {
+    margin-right: 5px;
+  }
+}
+
+.alert {
+  ul {
+    margin-bottom: 0;
+    padding-left: 20px;
+  }
+}
+
+.backup-status-indicators {
+  display: flex;
+
+  .indicator {
+    width: 11px;
+    height: 11px;
+    /* display: inline-block; */
+    position: relative;
+    margin-right: 5px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    &.success {
+      background: $success;
+    }
+
+    &.failed {
+      background: $red;
+    }
+
+    &.empty {
+      border: 1px solid #ccc;
+      background: $white;
+    }
+
+    &.half {
+      &:after,
+      &:before {
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        content: ' ';
+      }
+
+      &:before {
+        left: 0;
+        background: $success;
+      }
+
+      &:after {
+        right: 0;
+        background: $red;
+      }
+    }
+  }
+}

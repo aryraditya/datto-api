@@ -1,0 +1,41 @@
+.card {
+  &.no-border {
+    border: 0;
+  }
+
+
+
+  &-table {
+    .table {
+      margin-bottom: 0;
+
+      th {
+        border-top: none;
+      }
+    }
+  }
+  &-footer {
+    background: $white;
+
+    &-pagination {
+      padding: 0.5rem 1rem;
+    }
+    ul {
+      margin-bottom: 0;
+    }
+  }
+
+  &-title {
+    margin-bottom: 0;
+    font-size: 16px;
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .card-#{$color} {
+    .card-header {
+      background-color: $value;
+      color: color-yiq($value);
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.form-group {
+  &.required {
+    label {
+      &:after {
+        content: '*';
+        color: $red;
+        margin-left: 3px;
+      }
+    }
+  }
+}
+
+.input-group {
+  .btn {
+    .material-icons {
+      font-size: 13px;
+    }
+  }
+}

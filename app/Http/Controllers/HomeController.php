@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\DevicesExport;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 
@@ -28,13 +29,13 @@ class HomeController extends Controller
         $client     = new Client([
             'base_uri'  => 'https://api.datto.com/v1/',
             'headers'   => [
-                'Authorization' => 'Basic '.env('DATTO_TOKEN'),
+                'Authorization' => 'Basic '. base64_encode(env('DATTO_USERNAME') . ':' . env('DATTO_KEY') ),
             ]
         ]);
 
         $response   = $client->get('bcdr/device', [
-            'query_params'  => [
-                'page'      => $page
+            'query'  => [
+                '_page'      => $page
             ]
         ]);
 
@@ -44,5 +45,10 @@ class HomeController extends Controller
             'data'  => $data,
             'page'  => $page,
         ]);
+    }
+
+    public function export()
+    {
+        return \Excel::download(new DevicesExport(), 'devices.xlsx');
     }
 }

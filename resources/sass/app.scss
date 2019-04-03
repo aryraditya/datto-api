@@ -1,6 +1,6 @@
 
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Nunito|Material+Icons');
 
 // Variables
 @import 'variables';
@@ -8,7 +8,17 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+@import 'card';
+@import "form";
+@import "tables";
+@import "buttons";
+@import "utilities";
+
+.material-icons {
+  font-size: 1.2rem;
+  line-height: $line-height-base;
+}
 .navbar-laravel {
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  box-shadow: $box-shadow-sm;
 }

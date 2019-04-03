@@ -40,4 +40,9 @@ return [
         ],
     ],
 
+    'datto' => [
+        'key'       => env('DATTO_KEY'),
+        'username'  => env('DATTO_USERNAME'),
+    ]
+
 ];

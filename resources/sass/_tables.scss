@@ -1,0 +1,11 @@
+table {
+  thead,
+  tbody {
+    tr:first-child {
+      th,
+      td {
+        border-top: none;
+      }
+    }
+  }
+}

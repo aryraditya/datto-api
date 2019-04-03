@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Models\Company;
+use App\Models\CompanyUser;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -16,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'title', 'name', 'email', 'password',
     ];
 
     /**
@@ -27,4 +29,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+    public function companies()
+    {
+        return $this->belongsToMany(Company::class, 'company_users','user_id', 'company_id')
+            ->using(CompanyUser::class)
+            ->withTimestamps();
+    }
 }

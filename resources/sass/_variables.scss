@@ -1,20 +1,149 @@
-
 // Body
-$body-bg: #f8fafc;
+$body-bg: #fff;
 
 // Typography
 $font-family-sans-serif: "Nunito", sans-serif;
-$font-size-base: 0.9rem;
+$font-size-base: 0.875rem;
 $line-height-base: 1.6;
 
-// Colors
-$blue: #3490dc;
-$indigo: #6574cd;
-$purple: #9561e2;
-$pink: #f66D9b;
-$red: #e3342f;
-$orange: #f6993f;
-$yellow: #ffed4a;
-$green: #38c172;
-$teal: #4dc0b5;
-$cyan: #6cb2eb;
+$enable-shadows:              true;
+$box-shadow-sm:               0 5px 25px rgba(50, 50, 93, 0.1), 0 3px 5px rgba(0, 0, 0, 0.07);
+$box-shadow:                  0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+
+$input-btn-focus-width:       0 !default;
+
+$btn-font-weight:             600 !default;
+$btn-text-transform:          uppercase !default;
+$btn-letter-spacing:          .025em !default;
+$btn-box-shadow:              0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+$btn-hover-box-shadow:        0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+$btn-focus-box-shadow:        $btn-hover-box-shadow !default;
+$btn-focus-width:             $input-btn-focus-width !default;
+
+$btn-active-box-shadow:       none !default;
+
+// Color system
+
+$white:    #fff !default;
+$gray-100: #f6f9fc !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #8898aa !default;   // Line footer color
+$gray-700: #525f7f !default;   // Line p color
+$gray-800: #32325d !default;   // Line heading color
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+$grays: () !default;
+$grays: map-merge((
+        "100": $gray-100,
+        "200": $gray-200,
+        "300": $gray-300,
+        "400": $gray-400,
+        "500": $gray-500,
+        "600": $gray-600,
+        "700": $gray-700,
+        "800": $gray-800,
+        "900": $gray-900
+), $grays);
+
+$blue:    #5e72e4 !default;
+$indigo:  #5603ad !default;
+$purple:  #8965e0 !default;
+$pink:    #f3a4b5 !default;
+$red:     #f5365c !default;
+$orange:  #fb6340 !default;
+$orange-light: #ffa109 !default;
+$yellow:  #ffd600 !default;
+$green:   #2dce89 !default;
+$teal:    #11cdef !default;
+$cyan:    #2bffc6 !default;
+
+$colors: () !default;
+$colors: map-merge((
+        "blue":       $blue,
+        "indigo":     $indigo,
+        "purple":     $purple,
+        "pink":       $pink,
+        "red":        $red,
+        "orange":     $orange,
+        "yellow":     $yellow,
+        "green":      $green,
+        "teal":       $teal,
+        "cyan":       $cyan,
+        "white":      $white,
+        "gray":       $gray-600,
+        "light":      $gray-400,
+        "lighter":    $gray-200,
+        "gray-dark":  $gray-800
+), $colors);
+
+$default:       #172b4d !default;
+$primary:       #5e72e4 !default;
+$secondary:     #f4f5f7 !default;
+$success:       $green !default;
+$info:          $teal !default;
+$warning:       $orange !default;
+$danger:        $red !default;
+$light:         $gray-500 !default;
+$dark:          $gray-900 !default;
+$darker:        darken($gray-900, 15%) !default;
+
+$theme-colors: () !default;
+$theme-colors: map-merge((
+        "default":      $default,
+        "primary":      $primary,
+        "secondary":    $secondary,
+        "success":      $success,
+        "info":         $info,
+        "warning":      $warning,
+        "danger":       $danger,
+        "white":        $white,
+        "neutral":      $white,
+        "dark":         $dark,
+        "darker":       $darker,
+        "yellow":       $yellow,
+        "light-orange":  $orange-light,
+), $theme-colors);
+
+
+
+$input-btn-padding-y:         .625rem !default;
+$input-btn-padding-x:         .75rem !default;
+$input-btn-line-height:       1.5 !default;
+
+$input-padding-y:                       $input-btn-padding-y !default;
+$input-padding-x:                       $input-btn-padding-x !default;
+$input-line-height:                     $input-btn-line-height !default;
+
+$input-alternative-box-shadow:          0 1px 3px rgba(50,50,93,.15), 0 1px 0 rgba(0,0,0,.02);
+$input-focus-alternative-box-shadow:    0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
+
+$input-color:                           $gray-800 !default;
+$input-border-color:                    #cad1d7 !default;
+$input-border-width:                    1px !default;
+$input-box-shadow:                      0 2px 10px rgba(50, 50, 93, 0.1), 0 1px 3px rgba(0, 0, 0, 0.07) !default; // 0 1px 3px 0 $gray-400 !default;
+
+$input-focus-bg:                        $white !default;
+$input-focus-border-color:              rgba(50,151,211,.25);
+$input-focus-color:                     $input-color !default;
+$input-focus-width:                     0 !default;
+$input-focus-box-shadow:                none !default; //0 1px 3px 0 $gray-500 !default;
+
+$input-placeholder-color:               $gray-500 !default;
+$input-focus-placeholder-color:         $gray-500 !default;
+
+$input-height-border:                   $input-border-width * 2 !default;
+
+$input-transition:                      all .2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+
+// The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
+$yiq-contrasted-threshold:  200 !default;
+
+// Customize the light and dark text colors for use in our YIQ color contrast function.
+$yiq-text-dark:             $gray-900 !default;
+$yiq-text-light:            $white !default;
+
