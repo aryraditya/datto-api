@@ -124,13 +124,23 @@ class CompanyController extends Controller
         return back();
     }
 
+
+    public function report(Request $requst, $id)
+    {
+        $model      = Company::findOrFail($id);
+        $format     = \Maatwebsite\Excel\Excel::XLSX;
+        $name       = 'REPORT_' . $model->name  . now()->format('Ymd') .'.' .strtolower($format);
+
+        return Excel::download(new CompanyReport($model), $name, $format);
+    }
+
     public function reportRegional(Request $requst, $id)
     {
         $model      = Company::findOrFail($id);
         $format     = \Maatwebsite\Excel\Excel::XLSX;
         $name       = $model->name . '_REGIONAL_REPORT_' . now()->format('Ymd') .'.' .strtolower($format);
 
-        return Excel::download(new CompanyReport($model), $name, $format);
+        return Excel::download(new CompanyReportRegional($model), $name, $format);
     }
 
     public function reportAsset(Request $request, $id)

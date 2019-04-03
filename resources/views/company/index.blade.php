@@ -23,26 +23,30 @@
                             <td>{{ $model->name }}</td>
                             <td>{{ $model->devices()->count() }}</td>
                             <td class="action-buttons text-right">
-                                <span class="dropdown">
-                                    <button class="btn" data-toggle="dropdown"><i class="material-icons">print</i> Report</button>
-                                    <ul class="dropdown-menu">
-                                        <li class="dropdown-item">
-                                            <a href="{{ route('company.report.regional', ['id' => $model->id]) }}" class="">
-                                                Regional Report
-                                            </a>
-                                        </li>
-                                        <li class="dropdown-item">
-                                            <a href="{{ route('company.report.asset', ['id' => $model->id]) }}" class="">
-                                                Asset Report
-                                            </a>
-                                        </li>
-                                        <li class="dropdown-item">
-                                            <a href="{{ route('company.report.storage', ['id' => $model->id]) }}" class="">
-                                                Storage Report
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </span>
+                                {{--<span class="dropdown">--}}
+                                {{--<button class="btn" data-toggle="dropdown"><i class="material-icons">print</i> Report</button>--}}
+                                {{--<ul class="dropdown-menu">--}}
+                                {{--<li class="dropdown-item">--}}
+                                {{--<a href="{{ route('company.report.regional', ['id' => $model->id]) }}" class="">--}}
+                                {{--Regional Report--}}
+                                {{--</a>--}}
+                                {{--</li>--}}
+                                {{--<li class="dropdown-item">--}}
+                                {{--<a href="{{ route('company.report.asset', ['id' => $model->id]) }}" class="">--}}
+                                {{--Asset Report--}}
+                                {{--</a>--}}
+                                {{--</li>--}}
+                                {{--<li class="dropdown-item">--}}
+                                {{--<a href="{{ route('company.report.storage', ['id' => $model->id]) }}" class="">--}}
+                                {{--Storage Report--}}
+                                {{--</a>--}}
+                                {{--</li>--}}
+                                {{--</ul>--}}
+                                {{--</span>--}}
+
+                                <a href="{{ route('company.report', ['id' => $model->id]) }}" class="btn">
+                                    <i class="material-icons">print</i> Report
+                                </a>
                                 <a href="{{ route('company.edit', ['id' => $model->id]) }}" class="btn"
                                    data-toggle="tooltip" data-original-title="Update">
                                     <i class="material-icons">edit</i>

@@ -23,6 +23,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('devices', 'DeviceController@all')->name('device.all');
     Route::get('devices/{sn}/assets', 'DeviceController@assets')->name('device.assets');
 
+
+    Route::get('company/{id}/report', 'CompanyController@report')->name('company.report');
     Route::get('company/{id}/report/regional', 'CompanyController@reportRegional')->name('company.report.regional');
     Route::get('company/{id}/report/asset', 'CompanyController@reportAsset')->name('company.report.asset');
     Route::get('company/{id}/report/storage', 'CompanyController@reportStorage')->name('company.report.storage');
