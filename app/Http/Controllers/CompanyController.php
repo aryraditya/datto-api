@@ -55,6 +55,8 @@ class CompanyController extends Controller
         $model->name    = $request->input('name');
         $model->save();
 
+        $model->devices()->sync($request->input('devices', []));
+
         return redirect()->route('company.index');
     }
 
