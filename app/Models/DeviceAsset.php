@@ -75,7 +75,8 @@ class DeviceAsset extends Model
                 ]);
             }
 
-            return $backups;
+            if($backups->count())
+                return $backups;
         });
 
         return $backups;
