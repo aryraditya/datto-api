@@ -33,8 +33,9 @@ class CompanyController extends Controller
     public function create()
     {
         $model      = new Company();
+        $devices    = collect();
 
-        return view('company.form', compact('model'));
+        return view('company.form', compact('model', 'devices'));
     }
 
     /**
