@@ -91,7 +91,7 @@ class Device extends Service
         $model->ls_available_size = $device->localStorageAvailable->size;
         $model->ls_available_unit = $device->localStorageAvailable->units;
         $model->offsite_storage_used    = $device->offsiteStorageUsed->size;
-        $model->offsite_storage_unit    = $device->offsiteStorageUsed->unit;
+        $model->offsite_storage_unit    = $device->offsiteStorageUsed->units;
         $model->internal_ip     = $device->internalIP;
         $model->agent_count     = $device->agentCount;
         $model->share_count     = $device->shareCount;

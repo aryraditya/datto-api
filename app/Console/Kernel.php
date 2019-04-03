@@ -26,6 +26,8 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+        $schedule->command('app:device:sync')
+            ->cron('0 */3 * * *');
     }
 
     /**

@@ -12,7 +12,3 @@ use Illuminate\Foundation\Inspiring;
 | simple approach to interacting with each command's IO methods.
 |
 */
-
-Artisan::command('inspire', function () {
-    (new \App\Supports\Datto\Services\Device())->synchronize();
-})->describe('Display an inspiring quote');
