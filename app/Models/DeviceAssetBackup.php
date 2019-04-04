@@ -51,6 +51,9 @@ class DeviceAssetBackup extends Model
 
         if($this->backup_status == 'success')
             $success++;
+        else {
+            $success    += -2;
+        }
 
         if($this->local_verify_status == 'success')
             $success++;

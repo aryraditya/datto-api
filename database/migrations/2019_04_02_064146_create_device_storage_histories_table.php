@@ -14,7 +14,7 @@ class CreateDeviceStorageHistoriesTable extends Migration
     public function up()
     {
         Schema::create('device_storage_histories', function (Blueprint $table) {
-            $table->uuid('id');
+            $table->uuid('id')->primary();
             $table->string('device_sn',12);
             $table->bigInteger('ls_used_size')->unsigned();
             $table->string('ls_used_unit', 2);

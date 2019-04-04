@@ -35,6 +35,8 @@
                         @if($backup['model'])
                             @if($backup['model']->summary_status === 'success')
                                 <a href="{{ $backup['model']->screenshot_verify_image ?? '#' }}">success</a>
+                            @elseif($backup['model']->summary_status === 'half')
+                                NO SV
                             @else
                                 failed
                             @endif
